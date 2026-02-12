@@ -121,4 +121,7 @@ app.setNotFoundHandler((req, reply) =>
     : reply.code(404).send({ error: "Not Found" })
 );
 
-app.listen({ port }).then(() => console.log(`Server running on ${port}`));
+server.listen(process.env.PORT || 8080, "0.0.0.0", () => {
+  console.log(`Server is listening on port ${process.env.PORT || 8080}`);
+});
+
